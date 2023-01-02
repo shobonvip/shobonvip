@@ -1,5 +1,15 @@
 # 計算量 O((log N)^4)
 
+# --- 想定解 ---
+# popcount(i) = m となる k を固定し,
+# i が m の倍数であることと popcount(i) = m であることを
+# ともに満たすものを数え上げる.
+# dp[i][j][k]: 上から2進表記で i 桁目まで見たとき,
+# ビット 1 が立っている数の個数が j,
+# m で割ったあまりが k である.
+# として, いわゆる桁DPを O(log N) 回だけ行う.
+# DPは O((log N)^3) なので, 結局 O((log N)^4) となる.
+
 def calc(n, m):
 	dp = [[0] * m for i in range(m+1)]
 	v = list(map(int,bin(n)[2:]))
@@ -37,5 +47,4 @@ n = int(input())
 ans = 0
 for k in range(1, 60):
 	ans += calc(n, k)
-	#print(n,k,calc(n, k))
 print(ans)
