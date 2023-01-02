@@ -54,7 +54,7 @@ int main(){
 	long long n;
 	cin >> n;
 	long long ans = 0;
-	for (int m=1; m<=60; m++){
+	for (int m=1; m<60; m++){
 		ans += calc(n, m);
 	}
 	cout << ans << endl;
