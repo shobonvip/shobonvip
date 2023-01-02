@@ -45,6 +45,6 @@ def calc(n, m):
 
 n = int(input())
 ans = 0
-for k in range(1, 60):
-	ans += calc(n, k)
+for m in range(1, 60):
+	ans += calc(n, m)
 print(ans)
